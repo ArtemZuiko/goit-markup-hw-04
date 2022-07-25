@@ -5,7 +5,9 @@
   --primery-white-color: #ffffff;
   --secondary-white-color: #EEEEEE;
   --white-color: #f5f4fa;
-  --hero-background-color: #2F303A;
+  --hero-background-color:  #C4C4C4;
+  --footer-background-color: #2F303A;
+  --icons-color: #AFB1B8;
 
   --primary-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
@@ -86,7 +88,7 @@ button {
 
 .top-nav,
 .menu,
-.contact-header,
+.contact-header-list,
 .to-do-gallery,
 .team-list,
 .benefits,
@@ -158,8 +160,7 @@ button {
 
 /* ====================CONTACTS=================== */
 
-.contact-mail,
-.contact-phone {
+.contact-item {
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
@@ -168,21 +169,33 @@ button {
   color: var(--pimary-color);
 }
 
-.mail-header {
+.header-contact-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-mail:hover,
-.contact-mail:focus {
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 10px;
+}
+
+.contact-item:hover,
+.contact-item:focus {
   color: var(--accent-color);
 }
-.contact-phone:hover,
-.contact-phone:focus {
-  color: var(--accent-color);
+
+.contact-item:hover .contact-icon,
+.contact-item:focus .contact-icon {
+  fill: var(--accent-color);
 }
 
 /* ===============================================HERO============================================ */
 .hero {
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bkg.jpg);
+  background-size: cover;
   background-color: var(--hero-background-color);
 
   padding-top: 200px;
@@ -240,6 +253,19 @@ button {
   width: 270px;
 }
 
+.benefits-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  height: 120px;
+  background: var(--white-color);
+  border-radius: 4px;
+
+  margin-bottom: 30px;
+  }
+  
 /* ==========================================--TO-DO_SECTION========================================== */
 
 .to-do-section {
@@ -284,19 +310,92 @@ button {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .card-name-info {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* ==================================================FOOTER======================================= */
 
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primery-white-color);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+background-color: var(--accent-color);
+}
+
+.social-list-icon {
+  fill: var(--icons-color);
+}
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--primery-white-color);
+}
+
+/* ==================================================CLIENTS====================================== */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cliet-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+}
+
+.client-logo-icon {
+  fill: var(--icons-color);
+}
+
+.cliet-logo-link:hover,
+.cliet-logo-link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.cliet-logo-link:hover .client-logo-icon,
+.cliet-logo-link:focus .client-logo-icon {
+  fill: var(--accent-color);
+}
+/* ==================================================FOOTER======================================= */
 .page-footer {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  background: var(--hero-background-color)
+  background: var(--footer-background-color)
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-footer {
+  width: 145px;
+  height: 31px;
 }
 
 .address-map,
@@ -333,6 +432,34 @@ button {
 .contact-footer-list:not(:last-child) {
   margin-bottom: 9px;
   }
+
+.join-socials {
+  width: 206px;
+  height: 80px;
+  
+  margin-left: 70px;
+}
+
+.benefits-name.footer-join {
+  color: var(--primery-white-color);
+
+  margin-bottom: 20px;
+}
+
+.social-list-link.join {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+background-color: var(--accent-color);
+}
+
+.social-list-icon.join {
+  fill: var(--primery-white-color);
+}
+
+
 
 /* ==============================================PORTFOLIO========================================== */
 /* ============FILTER-BUTTONS============ */
@@ -397,6 +524,7 @@ button {
 }
 
 .project-info {
+  color: var(--pimary-color);
   font-size: 16px;
   line-height: 1.88;
 }
@@ -404,4 +532,13 @@ button {
 .project-name-info {
   border: 1px solid var(--secondary-white-color);
   padding: 20px 24px;
+}
+
+.project-card-link {
+  display: block;
+}
+
+ .project-card-link:hover,
+ .project-card-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
